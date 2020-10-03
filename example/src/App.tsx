@@ -1,17 +1,37 @@
-import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import React from 'react';
+import { Button, StyleSheet, View } from 'react-native';
 import AudioDucking from 'react-native-audio-ducking';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
+  async function duckAudio() {
+    try {
+      await AudioDucking.duckAudio();
+    } catch (error) {
+      console.log('duckAudio error', error);
+    }
+  }
 
-  React.useEffect(() => {
-    AudioDucking.multiply(3, 7).then(setResult);
-  }, []);
+  async function reDuckAudio() {
+    try {
+      await AudioDucking.reDuckAudio();
+    } catch (error) {
+      console.log('reDuckAudio error', error);
+    }
+  }
+
+  async function removeAudioDucking() {
+    try {
+      await AudioDucking.removeAudioDucking();
+    } catch (error) {
+      console.log('removeAudioDucking error', error);
+    }
+  }
 
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Button title={'Duck Audio'} onPress={duckAudio} />
+      <Button title={'Re-duck audio'} onPress={reDuckAudio} />
+      <Button title={'Remove audio ducking'} onPress={removeAudioDucking} />
     </View>
   );
 }

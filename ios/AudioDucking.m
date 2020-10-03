@@ -2,8 +2,11 @@
 
 @interface RCT_EXTERN_MODULE(AudioDucking, NSObject)
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
+RCT_EXTERN_METHOD(duckAudio:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(reDuckAudio:(RCTPromiseResolveBlock)resolve
+                 withRejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(removeAudioDucking:(RCTPromiseResolveBlock)resolve
                  withRejecter:(RCTPromiseRejectBlock)reject)
 
 @end
