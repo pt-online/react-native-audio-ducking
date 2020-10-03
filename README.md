@@ -15,7 +15,13 @@ import AudioDucking from "react-native-audio-ducking";
 
 // ...
 
-const result = await AudioDucking.multiply(3, 7);
+  async function duckAudio() {
+    try {
+      await AudioDucking.duckAudio();
+    } catch (error) {
+      console.log('duckAudio error', error);
+    }
+  }
 ```
 
 ## Contributing
