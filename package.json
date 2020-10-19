@@ -1,6 +1,6 @@
 {
   "name": "react-native-audio-ducking",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React Native module for audio ducking (temporarily lowering the volume level of audio)",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
