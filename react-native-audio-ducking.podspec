@@ -8,12 +8,12 @@ Pod::Spec.new do |s|
   s.summary      = package["description"]
   s.homepage     = package["homepage"]
   s.license      = package["license"]
-  s.authors      = package["author"]
+  s.author = "Marko Troskot"
 
   s.platforms    = { :ios => "10.0" }
   s.source       = { :git => "https://github.com/mtroskot/react-native-audio-ducking.git", :tag => "#{s.version}" }
 
-
+  s.swift_version = "4.2"
   s.source_files = "ios/**/*.{h,m,mm,swift}"
 
 

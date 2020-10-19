@@ -8,6 +8,13 @@ React Native module for audio ducking (temporarily lowering the volume level of 
 npm install react-native-audio-ducking
 ```
 
+### iOS
+
+```sh
+npm install react-native-swift
+react-native swiftify
+```
+
 ## Usage
 
 ```js
