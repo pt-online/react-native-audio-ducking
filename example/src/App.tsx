@@ -11,14 +11,6 @@ export default function App() {
     }
   }
 
-  async function reDuckAudio() {
-    try {
-      await AudioDucking.reDuckAudio();
-    } catch (error) {
-      console.log('reDuckAudio error', error);
-    }
-  }
-
   async function removeAudioDucking() {
     try {
       await AudioDucking.removeAudioDucking();
@@ -30,8 +22,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Button title={'Duck Audio'} onPress={duckAudio} />
-      <Button title={'Re-duck audio'} onPress={reDuckAudio} />
-      <Button title={'Remove audio ducking'} onPress={removeAudioDucking} />
+      <Button title={'Remove Audio Ducking'} onPress={removeAudioDucking} />
     </View>
   );
 }

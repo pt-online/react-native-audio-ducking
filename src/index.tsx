@@ -1,10 +1,8 @@
 import { NativeModules } from 'react-native';
 
 type AudioDuckingType = {
-  multiply(): Promise<number>;
-  duckAudio(): Promise<boolean>;
-  reDuckAudio(): Promise<boolean>;
-  removeAudioDucking(): Promise<boolean>;
+  duckAudio(): Promise<void>;
+  removeAudioDucking(): Promise<void>;
 };
 
 const { AudioDucking } = NativeModules;

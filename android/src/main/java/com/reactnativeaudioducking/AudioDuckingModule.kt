@@ -1,24 +1,33 @@
 package com.reactnativeaudioducking
 
+import android.os.Build
+import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
 import com.facebook.react.bridge.ReactMethod
-import com.facebook.react.bridge.Promise
 
 class AudioDuckingModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
-    override fun getName(): String {
-        return "AudioDucking"
-    }
+  var audioDuckingService = AudioDuckingService(reactContext);
 
-    // Example method
-    // See https://facebook.github.io/react-native/docs/native-modules-android
-    @ReactMethod
-    fun multiply(a: Int, b: Int, promise: Promise) {
-    
-      promise.resolve(a * b)
-    
-    }
+  override fun getName(): String {
+    return "AudioDucking"
+  }
 
-    
+  @ReactMethod
+  fun duckAudio(promise: Promise) {
+    if (Build.VERSION.SDK_INT >= 26) {
+      promise.resolve(audioDuckingService.duckAudioOreo());
+    } else if (Build.VERSION.SDK_INT >= 21) {
+      promise.resolve(audioDuckingService.duckAudioFroyo());
+    } else {
+      promise.resolve(audioDuckingService.duckAudioFroyo());
+    }
+  }
+
+  @ReactMethod
+  fun removeAudioDucking(promise: Promise) {
+    promise.resolve(audioDuckingService.abandonAudioFocus())
+  }
+
 }

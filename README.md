@@ -9,11 +9,14 @@ npm install react-native-audio-ducking
 ```
 
 ### iOS
-
 ```sh
 npm install react-native-swift
 react-native swiftify
 ```
+Set the minimum iOS version 10.0
+
+### Android
+no additional steps required
 
 ## Usage
 
@@ -27,6 +30,14 @@ import AudioDucking from "react-native-audio-ducking";
       await AudioDucking.duckAudio();
     } catch (error) {
       console.log('duckAudio error', error);
+    }
+  }
+
+  async function removeAudioDucking() {
+    try {
+      await AudioDucking.removeAudioDucking();
+    } catch (error) {
+      console.log('removeAudioDucking error', error);
     }
   }
 ```
