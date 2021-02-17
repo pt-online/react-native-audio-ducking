@@ -11,12 +11,14 @@ npm install react-native-audio-ducking
 ### iOS
 ```sh
 npm install react-native-swift
+cd ios && pod install
 react-native swiftify
+react-native run-ios
 ```
 Set the minimum iOS version 10.0
 
 ### Android
-no additional steps required
+react-native run-android
 
 ## Usage
 
